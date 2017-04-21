@@ -101,18 +101,17 @@ if($loggedIn) {
                 <div id="ads2"></div>
             </div>
             <div id="postContainer">
-                <div class="postTitle ">Title & Description</div>
+                <div class="postTitleHeader">Title & Description</div>
+                <div class="postHeaderPrice">Price</div>    
                 <div class="postHeaderDate">Date Posted</div>
-                <div class="postHeaderPrice">Price</div>
-                
             </div>
-            <?php foreach (Post::allRows(10) as $post): ?>
+            <?php foreach (Post::allRows(5) as $post): ?>
                 <div id="postContainer">
+                    <div class="postThumbnail"><?php echo $post->image_filename; ?></div>
                     <div class="postTitle "><?php echo $post->product_name; ?></div>
-                    <div class="postHeaderDate">Date Posted</div>
-                    <div class="postHeaderPrice">Price</div>
-
-
+                    <div class="postDescription"><?php echo $post->description; ?></div>
+                    <div class="postPrice">$<?php echo number_format($post->price, 2); ?></div>
+                    <div class="postDate"><?php echo $post->date_added; ?></div>
                 </div>
             <?php endforeach ?>
         </div>

@@ -209,7 +209,8 @@ h3
 
 #postContainer
 {
-	height: 70px;
+	height: 90px;
+	width: 900px;
 	margin-top: 10px;
 	margin-left: 50px;
 	/*background-color: #E5E4E1;*/
@@ -217,10 +218,11 @@ h3
 	border-bottom: 2px solid blue;
 }
 
+
 .postHeaderDate
 {
-	float: right;
-	margin-right: 10px;
+	display: inline-block;
+	margin-left: 100px;
 	font-size: 1.7em;
 	font-family: 'Muli', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -229,8 +231,8 @@ h3
 
 .postHeaderPrice
 {
-	float: right;
-	margin-right: 122px;
+	display: inline-block;
+	margin-left: 275px;
 	font-size: 1.7em;
 	font-family: 'Muli', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -238,9 +240,9 @@ h3
 
 .postThumbnail
 {
+	display: inline-block;
 	height: 60px;
 	width: 60px;
-	float: left;
 	margin-top: 4px;
 	margin-left: 15px;
 	border: 1px solid black;
@@ -248,54 +250,63 @@ h3
 /****TAKE OUT WIDTH ONCE TABLE INSERT IS GENERATED***/
 .postTitle
 {
-	height: 30px;
-	width: 300px;
-	margin-top: 4px;
+	width: 200px;
+	display: inline-block;
+	margin-left: 50px;
 	font-size: 1.7em;
-	margin-left: 15px;
-	float: left;
 	font-family: 'Muli', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
-	
+
+}
+.postTitleHeader
+{
+	width: 200px;
+	display: inline-block;
+	margin-left: 100px;
+	font-size: 1.7em;
+	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 .postDescription
 {
+	display: inline-block;
 	height: 30px;
-	width: 300px;
+	width: 150px;
 	font-family: 'Muli', sans-serif;
-	font-family: 'Open Sans Condensed', sans-serif;
-	text-align: center;
-	margin-top: 4px;
+	font-family: 'Open Sans Condensed', sans-serif;	
 	margin-left: 15px;
-	float: left;
-
 }
 
-.postCategory
+.postDate
 {
 	height: 30px;
-		font-family: 'Muli', sans-serif;
+	width: 160px;
+	margin-left: 50px;
+	display: inline-block;
+}
+.postCategory
+{
+	display: inline-block;
+	height: 30px;
+	font-family: 'Muli', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
 	width: 100px;
 	text-align: center;
 	margin-top: 4px;
 	margin-left: 15px;
-	float: left;
-
 }
 
 .postPrice
 {
+	display: inline-block;
 	height: 30px;
-	width: 200px;
+	width: 80px;
 	font-family: 'Muli', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
-	/*text-align: center;*/
 	margin-top: 4px;
-	margin-left: 15px;
-	float: left;
-	clear: right;
+	margin-left: 70px;
 }
 
 .usersRating
