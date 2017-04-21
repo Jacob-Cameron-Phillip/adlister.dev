@@ -5,7 +5,6 @@ if($loggedIn) {
 } else {
     echo "Hello guest!";
 }
-
 ?>
     <div id="featuredItemsBox">
         <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
@@ -55,7 +54,7 @@ if($loggedIn) {
             </div>
             <?php foreach (Post::allRows(5) as $post): ?>
                 <div id="postContainer">
-                    <div class="postThumbnail"><?php echo $post->image_filename; ?></div>
+                    <div class="postThumbnail"><img src="<?php echo $post->image_filename; ?>" style="width: 60px; height: 60px;"></div>
                     <div class="postTitle "><?php echo $post->product_name; ?></div>
                     <div class="postDescription"><?php echo $post->description; ?></div>
                     <div class="postPrice">$<?php echo number_format($post->price, 2); ?></div>

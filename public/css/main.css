@@ -241,7 +241,7 @@ h3
 	width: 60px;
 	margin-top: 4px;
 	margin-left: 15px;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 /****TAKE OUT WIDTH ONCE TABLE INSERT IS GENERATED***/
 .postTitle
