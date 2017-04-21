@@ -18,15 +18,17 @@ function saveUploadedImage($inputName) {
     $maxUploadSize = 1024000000;
     $validFileExtensions = ['jpg', 'jpeg', 'png', 'gif'];
     $uploadsDirectory = 'img/uploads';
+    
+    // var_dump($_FILES);
 
     // make sure the input exists and is a file
-    if (! isset($_FILES[$inputName])) {
+    if (!isset($_FILES[$inputName])) {
         throw new FileUploadException("input: '$inputName' does not exist!");
     }
 
     $uploadedFile = $_FILES[$inputName];
 
-    if (! isset($uploadedFile['size']) || $uploadedFile['size'] <= 0) {
+    if (!isset($uploadedFile['size']) || $uploadedFile['size'] <= 0) {
         throw new FileUploadException("input: '$inputName' is not a file or is empty!");
     }
 
@@ -44,7 +46,7 @@ function saveUploadedImage($inputName) {
 
     // only allows certain file extensions
     $fileExtension = pathinfo($uploadedFile['name'], PATHINFO_EXTENSION);
-    if(! in_array($fileExtension, $validFileExtensions)) {
+    if(!in_array($fileExtension, $validFileExtensions)) {
         throw new FileUploadException("Invalid file extension: '$fileExtension'");
     }
 
@@ -54,7 +56,7 @@ function saveUploadedImage($inputName) {
     $newName = substr($tempName, $positionOfLastSlash);
 
     // move image to uploads directory
-    $imagePath = $uploadsDirectory . '/' . $newName . '.' . $fileExtension;
+    $imagePath = $uploadsDirectory . $newName . '.' . $fileExtension;
     move_uploaded_file($tempName, __DIR__ .'/../public/' . $imagePath);
 
     // return the path to the image relative to our public folder

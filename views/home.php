@@ -16,69 +16,21 @@ if($loggedIn) {
         <div id="w">                    
             <div class="crsl-items" data-navigation="navbtns">
             <div class="crsl-wrap">
+            <?php foreach(Post::allRows(4) as $post): ?>
                 <div class="crsl-item">
                 <div class="thumbnail">
-                    <img src="img/sportingGoods.jpg" alt="Sports">
-                    <span class="postdate">Feb 16, 2014</span>
+                    <img src="<?php echo $post->image_filename; ?>" alt="<?php echo $post->category; ?>">
+                    <span class="postdate"><?php echo ucwords($post->condition); ?></span>
                 </div>
                 
-                <h3><a href="#">Sporting Goods</a></h3>
+                <h3><a href="#"><?php echo $post->product_name; ?></a></h3>
                 
-                <p>Insert Content Here</p>
+                <p><?php echo substr($post->description, 0, 104) . "..."; ?></p>
                 
                 <p class="readmore"><a href="#">Read More &raquo;</a></p>
                 </div><!-- post #1 -->
-                
-                <div class="crsl-item">
-                <div class="thumbnail">
-                    <img src="img/auto.jpg" alt="Automotive">
-                    <span class="postdate">Feb 19, 2014</span>
-                </div>
-                
-                <h3><a href="#">Automotive</a></h3>
-                <p>Insert Content Here</p>
-                
-                <p class="readmore"><a href="#">Read More &raquo;</a></p>
-                </div><!-- post #2 -->
-                
-                <div class="crsl-item">
-                <div class="thumbnail">
-                    <img src="img/outdoors.jpeg" alt="outdoors">
-                    <span class="postdate">Feb 23, 2014</span>
-                </div>
-                
-                <h3><a href="#">Hunting/Outdoors</a></h3>
-                
-                <p>Insert Content Here</p>
-                
-                <p class="readmore"><a href="#">Read More &raquo;</a></p>
-                </div><!-- post #3 -->
-                
-                <div class="crsl-item">
-                <div class="thumbnail">
-                    <img src="img/electronics.jpg" alt="apple ipod classic photo">
-                    <span class="postdate">Mar 02, 2014</span>
-                </div>
-                
-                <h3><a href="#">Electronics</a></h3>
-                
-                <p>Insert Content Here</p>
-                
-                <p class="readmore"><a href="#">Read More &raquo;</a></p>
-                </div><!-- post #4 -->
-                
-                <div class="crsl-item">
-                <div class="thumbnail">
-                    <img src="img/thumb05.jpg" alt="web design magazines">
-                    <span class="postdate">Mar 11, 2014</span>
-                </div>
-                
-                <h3><a href="#">The 10 Best Web Design Magazines</a></h3>
-                
-                <p>Insert Content Here</p>
-                
-                <p class="readmore"><a href="#">Read More &raquo;</a></p>
-                </div><!-- post #5 -->
+            <?php endforeach; ?>
+
             </div><!-- @end .crsl-wrap -->
             </div><!-- @end .crsl-items -->
             <nav class="slidernav">
