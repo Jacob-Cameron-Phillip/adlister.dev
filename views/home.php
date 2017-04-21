@@ -6,10 +6,6 @@ if($loggedIn) {
     echo "Hello guest!";
 }
 
-// foreach(Post::allRows(2) as $key) {
-//     $key->product_name;
-// }
-
 ?>
     <div id="featuredItemsBox">
         <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
@@ -116,10 +112,6 @@ if($loggedIn) {
             <?php endforeach ?>
         </div>
     </div>
-    
-    
-
-
     <div class="emptyClass">
         <div class="emptyLayout">
             <!--  add hover feature that .fadeIn a class that has an all white box with information about creating an effective listing  -->
