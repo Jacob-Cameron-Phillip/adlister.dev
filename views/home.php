@@ -124,7 +124,7 @@ if($loggedIn) {
 
     <div class="emptyClass">
         <div class="emptyLayout">
-            <!--  add hover feature that .fadeIn a class that has an all white box with information about creating and effective listing  -->
+            <!--  add hover feature that .fadeIn a class that has an all white box with information about creating an effective listing  -->
             <center><h4>Tips To Success</h4></center>
         </div>
         <div class="emptyLayout">
