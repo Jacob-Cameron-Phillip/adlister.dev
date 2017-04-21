@@ -97,23 +97,28 @@ if($loggedIn) {
         
         <div class="recentlyAddedCategories">
             <div id="postContainer">
-                <div class="postThumbnail">IMG</div>
-                <div class="postTitle">TITLE</div>
-                <div class="postCondition">Condition</div>
-                <div class="postDate">DATE</div>
-                <div class="postDescription">Description</div>
-                <div class="usersRating">Sellers Rating</div>
+                <div class="postTitle ">Title & Description</div>
+                <div class="postHeaderDate">Date Posted</div>
+                <div class="postHeaderPrice">Price</div>
+                
             </div>
+            <?php foreach (Post::allRows(10) as $post): ?>
+                <div id="postContainer">
+                
+                    <div class="postThumbnail"><?php echo $post->image_filename; ?></div>
+                    <div class="postTitle"><?php echo $post->product_name; ?></div>
+                    <div class="postDescription">$<?php echo number_format($post->price); ?></div>
+                    <div class="postDate"><?php echo $post->date_added; ?></div>
+                    <div class="postPrice"><?php echo $post->description; ?></div>
+                </div>
+            <?php endforeach ?>
         </div>
-        
-
-
     </div>
     
 
     <div class="adsContainer">
-        <div id="ads">Insert Add Here</div>
-        <div id="ads">Insert Add Here</div>
+        <div id="ads1"></div>
+        <div id="ads2"></div>
     </div>
     
 

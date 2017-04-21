@@ -215,8 +215,28 @@ h3
 	height: 70px;
 	margin-top: 10px;
 	margin-left: 50px;
-	background-color: #E5E4E1;
-	border: 1px solid black;
+	/*background-color: #E5E4E1;*/
+	border-top: 2px solid blue;
+	border-bottom: 2px solid blue;
+}
+
+.postHeaderDate
+{
+	float: right;
+	margin-right: 10px;
+	font-size: 1.7em;
+	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.postHeaderPrice
+{
+	float: right;
+	margin-right: 122px;
+	font-size: 1.7em;
+	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .postThumbnail
@@ -234,40 +254,51 @@ h3
 	height: 30px;
 	width: 300px;
 	margin-top: 4px;
+	font-size: 1.7em;
 	margin-left: 15px;
 	float: left;
-	border: 1px solid black;
+	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	
 }
 
 .postDescription
 {
 	height: 30px;
 	width: 300px;
+	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: center;
 	margin-top: 4px;
 	margin-left: 15px;
 	float: left;
-	border: 1px solid black;
+
 }
 
-.postCondition
+.postCategory
 {
 	height: 30px;
-	width: 300px;
+		font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 100px;
+	text-align: center;
 	margin-top: 4px;
 	margin-left: 15px;
 	float: left;
-	border: 1px solid black;
+
 }
 
-.postDate
+.postPrice
 {
 	height: 30px;
-	width: 40px;
+	width: 200px;
+	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	/*text-align: center;*/
 	margin-top: 4px;
 	margin-left: 15px;
 	float: left;
 	clear: right;
-	border: 1px solid black;
 }
 
 .usersRating
@@ -294,20 +325,36 @@ h3
 }
 
 
-#ads
+#ads1
 {
 	width: 232px;
 	height: 250px;
-	border: 1px solid black;
+	background-image: url('../img/ad1.gif');
+	background-size: 232px 250px;
+	background-repeat: no-repeat;
+	background-position: center center;	
 	margin-top: 24px;
 	margin-left: 33px;
-	background-color: #FFF;
+	
+}
+
+#ads2
+{
+	background-image: url('../img/burger.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	border: 1px solid black;
+	width: 232px;
+	height: 250px;
+	margin-top: 24px;
+	margin-left: 33px;
 }
 
 .recentlyAddedCategories
 {
 	width: 900px;
-	height: 430px;
+	margin-bottom: 200px;
 	margin-left: 20px;
 	margin-top: 30px;
 	float: left;
