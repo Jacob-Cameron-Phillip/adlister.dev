@@ -61,7 +61,12 @@ function pageController()
             if(isset($_POST['submit_ad'])) {
                 $errors = [];
                 $post = new Post();
-                $post->user_id = isset($_SESSION['LOGGED_IN_USER']) ? Auth::id() : "0";
+                if(Auth::check()) {
+                    $post->user_id = Auth::id();
+                } else {
+                    header("Location: /login/");
+                    die();
+                }
                 $post->date_added = date('Y-m-d H:i:s');
 
                 try {
