@@ -61,14 +61,9 @@ function pageController()
             if(isset($_POST['submit_ad'])) {
                 $errors = [];
                 $post = new Post();
-                $post->user_id = Auth::id();
+                $post->user_id = isset($_SESSION['LOGGED_IN_USER']) ? Auth::id() : "0";
                 $post->date_added = date('Y-m-d H:i:s');
 
-                try {
-                    $post->image_filename = "n/a";
-                } catch (Exception $e) {
-                    $errors['image_filename'] = $e->getMessage();
-                }
                 try {
                     $post->category = Input::getString('category');
                 } catch (Exception $e) {
@@ -99,6 +94,18 @@ function pageController()
                 } catch (Exception $e) {
                     $errors['email'] = $e->getMessage();
                 }
+                try {
+                    $post->image_filename = saveUploadedImage('image_filename');
+                } catch (Exception $e) {
+                    $errors['image_filename'] = $e->getMessage();
+                }
+
+                try {
+                    $post->condition = Input::getString('condition');
+                } catch (Exception $e) {
+                    $errors['condition'] = $e->getMessage();
+                }
+
                 $_SESSION['errors'] = $errors;
                 if(empty($_SESSION['errors'])) {
                     $post->save();

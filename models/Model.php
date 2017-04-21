@@ -120,10 +120,10 @@ abstract class Model {
 
         foreach ($this->attributes as $column => $value) {
             if ($columns == '' && $valuePlaceholders == '') {
-                $columns .= $column;
+                $columns .= "`$column`";
                 $valuePlaceholders .= ':' . $column;
             } else {
-                $columns .= ', ' . $column;
+                $columns .= ', ' . "`$column`";
                 $valuePlaceholders .= ', :' . $column;
             }
         }
@@ -134,6 +134,7 @@ abstract class Model {
         foreach ($this->attributes as $column => $value) {
             $statement->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
+        // var_dump($statement);
         $statement->execute();
         $this->attributes['id'] = self::$dbc->lastInsertId();
     }
