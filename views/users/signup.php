@@ -4,7 +4,7 @@
 
             <div class="row">
 
-                <h1 class="section-title"><center>Signup For OooLister</center></h1>
+                <h1 class="section-title"><center>Register</center></h1>
 
                 <div class="col-md-6 col-md-offset-3">
 
