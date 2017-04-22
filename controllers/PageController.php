@@ -67,6 +67,7 @@ function pageController()
                     header("Location: /login/");
                     die();
                 }
+
                 $post->date_added = date('Y-m-d H:i:s');
 
                 try {
@@ -234,6 +235,7 @@ function pageController()
                     }
                 }
                 $_SESSION['signup_errors'] = $errors;
+                // var_dump($_SESSION);
                 if(empty($_SESSION['signup_errors']))
                 {
                     $user->save();

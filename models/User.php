@@ -100,10 +100,6 @@ class User extends Model {
             $_SESSION['ERROR_MESSAGES']['password'] = "password must be at least $minPass characters";
         }
 
-        if (!isset($_SESSION['ERROR_MESSAGES']['password']) and $this->attributes['password'] !== Input::get('password-confirm')) {
-            $_SESSION['ERROR_MESSAGES']['password-confirm'] = 'password did not match confirmation';
-        }
-
         if (!isset($_SESSION['ERROR_MESSAGES']['email']) and !filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $_SESSION['ERROR_MESSAGES']['email'] = 'email must be in valid format';
         }

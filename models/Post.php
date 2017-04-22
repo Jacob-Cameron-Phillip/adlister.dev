@@ -25,7 +25,7 @@ class Post extends Model {
     {
         self::dbConnect();
 
-        $query = 'SELECT * FROM ' . self::$table . ' LIMIT ' . $limit;
+        $query = 'SELECT * FROM ' . self::$table . ' ORDER BY date_added DESC LIMIT ' . $limit;
         $statement = self::$dbc->prepare($query);
         $statement->execute();
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);

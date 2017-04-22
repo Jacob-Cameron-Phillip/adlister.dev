@@ -1,13 +1,13 @@
 <div class="background-grey">
 <?php
 if($loggedIn) {
-    echo "Hello " . ucwords(Auth::user()->name) . "!";
+    // echo "Hello " . ucwords(Auth::user()->name) . "!";
 } else {
-    echo "Hello guest!";
+    // echo "Hello guest!";
 }
 ?>
     <div id="featuredItemsBox">
-        <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
+        <center><h2 class="section-title">Featured Items</h2></center>
         <div id="w">                    
             <div class="crsl-items" data-navigation="navbtns">
             <div class="crsl-wrap">
@@ -41,26 +41,37 @@ if($loggedIn) {
     </div>
     <div class="recentlyAdded">
         <h1 class="section-title latestPosts">Latest Posts</h1>
-        
-        <div class="recentlyAddedCategories">
-            <div class="adsContainer">
-                <div id="ads1"></div>
-                <div id="ads2"></div>
-            </div>
-            <div id="postContainer">
-                <div class="postTitleHeader">Title & Description</div>
-                <div class="postHeaderPrice">Price</div>    
-                <div class="postHeaderDate">Date Posted</div>
-            </div>
-            <?php foreach (Post::allRows(5) as $post): ?>
-                <div id="postContainer">
-                    <div class="postThumbnail"><img src="<?php echo $post->image_filename; ?>" style="width: 60px; height: 60px;"></div>
-                    <div class="postTitle "><?php echo $post->product_name; ?></div>
-                    <div class="postDescription"><?php echo $post->description; ?></div>
-                    <div class="postPrice">$<?php echo number_format($post->price, 2); ?></div>
-                    <div class="postDate"><?php echo $post->date_added; ?></div>
-                </div>
-            <?php endforeach ?>
+    
+    <div class="recentlyAddedCategories">
+        <div class="adsContainer">
+            <div id="ads1"></div>
+            <div id="ads2"></div>
+        </div>
+            <table>
+            <caption>Product Information</caption>
+            <thead>
+                <tr>
+                <th scope="col"></th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Description</th>
+                <th scope="col">Post Price</th>
+                <th scope="col">Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+        <?php foreach (Post::allRows(5) as $post): ?>
+                <tr>
+                <th scope="row">
+                    <img src="<?php echo $post->image_filename; ?>" style="width: 60px; height: 60px;" class"img">
+                </th>
+                <td><?php echo $post->product_name; ?></td>
+                <td><?php echo $post->description; ?></td>
+                <td>$<?php echo number_format($post->price); ?></td>
+                <td><?php echo $post->date_added; ?></td>
+                </tr>
+        <?php endforeach ?>
+            </tbody>
+            </table>
         </div>
     </div>
     <div class="emptyClass">
