@@ -94,6 +94,7 @@ abstract class Model {
     /**
      * remove the instance from the database
      */
+
     public function delete()
     {
         $query = 'DELETE FROM ' . static::$table . ' WHERE id = :id';
@@ -113,6 +114,7 @@ abstract class Model {
      * after the insert is performed the `id` attribute of the model
      * will be set to the newly generated id
      */
+     
     protected function insert()
     {
         $columns = '';
