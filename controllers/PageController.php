@@ -1,5 +1,4 @@
 <?php
-
 require_once '../utils/helper_functions.php';
 
 function parseRequest($request)
